@@ -15,6 +15,11 @@ public class CustomerMain {
 		Scanner scan = new Scanner(System.in);
 		Customer person = new Customer();
 		
+		final String confirmation = "yes";
+		String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(confirmation))
+		{
 		System.out.println("Enter details : ");
 		String CustomerDetails= scan.nextLine();
 		
@@ -27,12 +32,15 @@ public class CustomerMain {
 		person.setAddress(CustomerAddress);
 		person.setMobile(CustomerMobile);
 		
-		scan.close();
-		
 		System.out.println("Customer Details");
 		System.out.println("Name    "+person.getName());
 		System.out.println("Address "+person.getAddress());
 		System.out.println("Mobile  "+person.getMobile());
+		
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
+		}
+		scan.close();
 
 	}
 

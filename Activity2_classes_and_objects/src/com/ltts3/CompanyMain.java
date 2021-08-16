@@ -16,6 +16,12 @@ public class CompanyMain {
 		Scanner scan = new Scanner(System.in);
 		Company team = new Company();
 		
+		
+		final String confirmation = "yes";
+		String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(confirmation))
+		{
 		System.out.println("Enter Company name : ");
 		String CompanyName= scan.nextLine();
 		team.setName(CompanyName);
@@ -29,8 +35,6 @@ public class CompanyMain {
 		System.out.println("Enter TeamLead : ");
 		String LeadName= scan.nextLine();
 		team.setTeamlead(LeadName);
-		
-		scan.close();
 		
 		for(String CheckLead : details)
 		{
@@ -50,6 +54,11 @@ public class CompanyMain {
 		{
 			System.out.println("Invalid Input");
 		}
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
+		}
+		scan.close();
 	}
+		
 
 }

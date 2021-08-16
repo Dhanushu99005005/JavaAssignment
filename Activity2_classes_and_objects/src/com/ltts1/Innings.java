@@ -10,8 +10,8 @@ package com.ltts1;
 public class Innings {
 	private String teamname;
 	private String inningsname;
-	private String First="First";
-	private String Second="Second";
+	final private String First="first";
+	final private String Second="second";
 	private int runs;
 	
 	public String getTeamname() {
@@ -38,11 +38,11 @@ public class Innings {
 		System.out.println("Name : "+teamname);
 		System.out.println("Scored : "+runs);
 		
-		if(this.inningsname.equals(First))
+		if(this.inningsname.toLowerCase().equals(First))
 		{
 			System.out.println("Need "+(runs+1)+" to win");
 		}
-		else if(this.inningsname.equals(Second))
+		else if(this.inningsname.toLowerCase().equals(Second))
 		{
 			System.out.println("Match Ended");
 		}

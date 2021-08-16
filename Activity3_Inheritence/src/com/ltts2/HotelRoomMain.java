@@ -5,12 +5,17 @@ import java.util.Scanner;
 public class HotelRoomMain {
 
 	public static void main(String[] args) {
-		final String Confirmation="yes";
+		
 		Scanner scan = new Scanner(System.in);
+		final String Confirmation="yes";
+        String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(Confirmation))
+		{
 		System.out.println("Hotel Tariff Calculator");
 		System.out.println("1. Deluxe Room");
 		System.out.println("2. Deluxe AC Room");
-		System.out.println("2. Suite AC Room");
+		System.out.println("3. Suite AC Room");
 		System.out.println("Select Room Type");
 		int option = scan.nextInt();
 		scan.nextLine();
@@ -61,6 +66,9 @@ public class HotelRoomMain {
                System.out.println("RoomTariff per day is :"+suiteACTariff);
                break;
         default:System.out.println("Invalid Option");
+		}
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
 		}
 		scan.close();
 	}

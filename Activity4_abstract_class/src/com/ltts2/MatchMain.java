@@ -6,6 +6,12 @@ public class MatchMain {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		
+		final String confirmation = "yes";
+		String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(confirmation))
+		{
 		System.out.println("Enter the match format : ");
 		System.out.println("1. ODI");
 		System.out.println("2. T20");
@@ -52,6 +58,9 @@ public class MatchMain {
                  testmatch.display(reqtestRunRate, remainingtestBalls);
                  break;
         default :System.out.println("Invalid Option");
+		}
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
 		}
 		scan.close();
 	}

@@ -14,6 +14,9 @@ public class EmployeeMain {
 		Scanner scan = new Scanner(System.in);
 		Employee person = new Employee();
 		
+		final String confirmation = "yes";
+		String checkCondition ="yes";
+		
 		System.out.println("Enter Name : ");
 		String EmployeeName= scan.nextLine();
 		person.setName(EmployeeName);
@@ -60,9 +63,19 @@ public class EmployeeMain {
 	                person.setMobile(UpdatedMobile);
 	                break;
 			case 4 :person.displayEmployeeDetails();
-			        scan.close();
-			        System.exit(0);
-			        break;
+			        System.out.println("Do you want to continue(yes/no) ");
+			        checkCondition=scan.nextLine();
+			        if(checkCondition.toLowerCase().equals(confirmation))
+			        {
+			        	break;
+			        }
+			        else
+			        {
+			        	scan.close();
+				        System.exit(0);
+				        break;
+			        }
+			        
 			default:System.out.println("Invalid option");
 			        scan.close();
 			        System.exit(0);          

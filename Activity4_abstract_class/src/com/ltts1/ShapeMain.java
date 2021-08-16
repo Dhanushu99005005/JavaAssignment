@@ -6,6 +6,12 @@ public class ShapeMain {
 
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		
+		final String confirmation = "yes";
+		String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(confirmation))
+		{
 		System.out.println("Enter Shape");
 		System.out.println("1. Circle");
 		System.out.println("2. Square");
@@ -27,6 +33,9 @@ public class ShapeMain {
 			scan.nextLine();
 			Square square = new Square();
 			square.calculateArea(side);
+		}
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
 		}
 		scan.close();
 

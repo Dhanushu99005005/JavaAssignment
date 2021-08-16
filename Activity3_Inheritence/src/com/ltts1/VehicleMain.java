@@ -7,6 +7,12 @@ public class VehicleMain {
 	public static void main(String[] args) 
 	{
 		Scanner scan = new Scanner(System.in);
+		
+		final String Confirmation="yes";
+		String checkCondition ="yes";
+		
+		while(checkCondition.toLowerCase().equals(Confirmation))
+		{
 		System.out.println("Select Vehicle Type");
 		System.out.println("1. Four Wheeler");
 		System.out.println("2. Two Wheeler");
@@ -65,7 +71,6 @@ public class VehicleMain {
 		}
 		if(option==2)
 		{
-			final String Confirmation="yes";
 			System.out.println("Enter Vehicle Make : ");
 			String VehicleMake= scan.nextLine();
 			
@@ -119,6 +124,9 @@ public class VehicleMain {
 			modelType2.displayMake();
 			modelType2.displayBasicInfo();
 			modelType2.displayDetailInfo();
+		}
+		System.out.println("Do you want to continue(yes/no) ");
+		checkCondition=scan.nextLine();
 		}
 		scan.close();
 	}
