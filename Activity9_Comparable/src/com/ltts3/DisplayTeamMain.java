@@ -26,9 +26,21 @@ public class DisplayTeamMain {
 		
 		Collections.sort(linkedList);
 		
+		String CheckName="";
+		
 		for(Team teamName :linkedList)
 		{
-			System.out.println(teamName.getTeamName()+teamName.getPlayer().getPlayerName());
+			if(teamName.getTeamName().compareTo(CheckName)!=0)
+			{
+				CheckName=teamName.getTeamName();
+				System.out.println(CheckName);
+				System.out.println("--"+teamName.getPlayer().getPlayerName());
+				
+			}
+			else
+			{
+				System.out.println("--"+teamName.getPlayer().getPlayerName());
+			}
 		}
 		
 
